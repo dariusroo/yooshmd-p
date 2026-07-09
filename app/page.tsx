@@ -1,4 +1,23 @@
+const SCHEDULE_LATER_URL =
+  "https://intakeq.com/booking/mqiu0i?serviceId=24f9085e-d29a-424f-905f-3bc4e2a53e11";
+
+const CTA_CLASS_NAME =
+  "w-full max-w-xs rounded-full bg-[#800020] px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto";
+
+function isConsultAvailableNowPT(): boolean {
+  const hour = Number(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles",
+      hour: "numeric",
+      hourCycle: "h23",
+    }).format(new Date())
+  );
+  return hour >= 8 && hour < 20;
+}
+
 export default function Page() {
+  const available = isConsultAvailableNowPT();
+
   return (
     <>
       <header className="flex flex-col items-center gap-1 px-4 pt-6 text-center sm:pt-8">
@@ -14,11 +33,31 @@ export default function Page() {
         </p>
 
         <a
+          id="cta-available"
           href="https://doxy.me/yooshmd"
-          className="w-full max-w-xs rounded-full bg-[#800020] px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto"
+          className={CTA_CLASS_NAME}
+          style={available ? undefined : { display: "none" }}
+          suppressHydrationWarning
         >
           Click aquí para iniciar su consulta ahora
         </a>
+
+        <a
+          id="cta-unavailable"
+          href={SCHEDULE_LATER_URL}
+          className={CTA_CLASS_NAME}
+          style={available ? { display: "none" } : undefined}
+          suppressHydrationWarning
+        >
+          Click aquí para agendar su consulta
+        </a>
+
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";})()`,
+          }}
+        />
 
         <p className="text-base">
           Si prefiere agendar su consulta para más tarde,{" "}
