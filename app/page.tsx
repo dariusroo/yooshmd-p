@@ -52,13 +52,6 @@ export default function Page() {
           Click aquí para agendar su consulta
         </a>
 
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");var c=document.getElementById("schedule-later-note");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";if(c)c.style.display=open?"":"none";})()`,
-          }}
-        />
-
         <p
           id="schedule-later-note"
           className="text-base"
@@ -74,6 +67,13 @@ export default function Page() {
           </a>
           .
         </p>
+
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");var c=document.getElementById("schedule-later-note");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";if(c)c.style.display=open?"":"none";})()`,
+          }}
+        />
       </main>
     </>
   );
