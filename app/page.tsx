@@ -71,7 +71,7 @@ export default function Page() {
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");var c=document.getElementById("schedule-later-note");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";if(c)c.style.display=open?"":"none";})()`,
+            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");var c=document.getElementById("schedule-later-note");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";if(c)c.style.display=open?"":"none";if(a)a.addEventListener("click",function(){fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json"},keepalive:true,body:JSON.stringify({access_key:"21870d7c-9c85-4bb8-9df3-148c8971f25b",subject:"YooshMD: visit started",message:"A patient clicked the start-visit button at "+new Date().toISOString()+"."})}).catch(function(){});});})()`,
           }}
         />
       </main>
