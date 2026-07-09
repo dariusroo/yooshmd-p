@@ -55,14 +55,19 @@ export default function Page() {
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";})()`,
+            __html: `(function(){var h=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour:"numeric",hourCycle:"h23"}).format(new Date()));var open=h>=8&&h<20;var a=document.getElementById("cta-available");var b=document.getElementById("cta-unavailable");var c=document.getElementById("schedule-later-note");if(a)a.style.display=open?"":"none";if(b)b.style.display=open?"none":"";if(c)c.style.display=open?"":"none";})()`,
           }}
         />
 
-        <p className="text-base">
+        <p
+          id="schedule-later-note"
+          className="text-base"
+          style={available ? undefined : { display: "none" }}
+          suppressHydrationWarning
+        >
           Si prefiere agendar su consulta para más tarde,{" "}
           <a
-            href="https://intakeq.com/booking/mqiu0i?serviceId=24f9085e-d29a-424f-905f-3bc4e2a53e11"
+            href={SCHEDULE_LATER_URL}
             className="font-semibold underline underline-offset-2"
           >
             haga clic en este enlace
