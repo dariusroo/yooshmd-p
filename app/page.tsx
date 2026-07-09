@@ -2,7 +2,7 @@ const SCHEDULE_LATER_URL =
   "https://intakeq.com/booking/mqiu0i?serviceId=24f9085e-d29a-424f-905f-3bc4e2a53e11";
 
 const CTA_CLASS_NAME =
-  "w-full max-w-xs rounded-full bg-[#800020] px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto";
+  "w-full max-w-xs rounded-full bg-[#156059] px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto";
 
 function isConsultAvailableNowPT(): boolean {
   const hour = Number(
