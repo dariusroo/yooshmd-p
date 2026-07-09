@@ -15,7 +15,7 @@ export default function Page() {
 
         <a
           href="https://doxy.me/yooshmd"
-          className="w-full max-w-xs rounded-full bg-fuchsia-600 px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto"
+          className="w-full max-w-xs rounded-full bg-[#800020] px-8 py-4 text-lg font-semibold text-background transition-opacity hover:opacity-90 sm:w-auto"
         >
           Haga clic aquí para iniciar su consulta ahora
         </a>
