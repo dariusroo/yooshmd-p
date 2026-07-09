@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-6 px-4 py-12 text-center sm:gap-8 sm:px-6 sm:py-16">
-      <p className="max-w-md text-base leading-relaxed sm:text-lg">
+      <p className="max-w-md text-xl leading-relaxed sm:text-2xl">
         Gracias &mdash; sus formularios han sido enviados. El doctor
         revisará su información ahora. Haga clic abajo para unirse a su
         videoconsulta. La mayoría de las consultas duran de 5 a 10 minutos.
