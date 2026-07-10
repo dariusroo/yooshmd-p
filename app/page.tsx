@@ -32,6 +32,12 @@ export default function Page() {
           videoconsulta. La mayoría de las consultas duran de 5 a 10 minutos.
         </p>
 
+        <p className="max-w-md text-base opacity-80">
+          No se le cobrará por esta visita. Si califica para iniciar el
+          programa y recibir sus medicamentos a domicilio, se le enviará un
+          enlace de pago después.
+        </p>
+
         <a
           id="cta-available"
           href="https://doxy.me/yooshmd"
